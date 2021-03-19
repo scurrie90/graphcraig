@@ -2,58 +2,59 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { API } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { listNotes } from './graphql/queries';
-import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
+import { listNewPosts } from './graphql/queries';
+import { createNewPost as createNewPostMutation, deleteNewPost as deleteNewPostMutation} from './graphql/mutations';
 
-const initialFormState = { name: '', description: '' }
+const initialFormState = { title: '', price: 0, location: '', seller: '', category: 'VEHICLES', image: '', description: '' }
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
-    fetchNotes();
+    fetchPosts();
   }, []);
 
-  async function fetchNotes() {
-    const apiData = await API.graphql({ query: listNotes });
-    setNotes(apiData.data.listNotes.items);
+  async function fetchPosts() {
+    const apiData = await API.graphql({ query: listNewPosts });
+    setPosts(apiData.data.listNewPosts.items);
   }
 
-  async function createNote() {
-    if (!formData.name || !formData.description) return;
-    await API.graphql({ query: createNoteMutation, variables: { input: formData } });
-    setNotes([ ...notes, formData ]);
+  async function createPost() {
+    if (!formData.title || !formData.description) return;
+    await API.graphql({ query: createNewPostMutation, variables: { input: formData } });
+    setPosts([ ...posts, formData ]);
     setFormData(initialFormState);
   }
 
-  async function deleteNote({ id }) {
-    const newNotesArray = notes.filter(note => note.id !== id);
-    setNotes(newNotesArray);
-    await API.graphql({ query: deleteNoteMutation, variables: { input: { id } }});
+  async function deletePost({ id }) {
+    const newPostsArray = posts.filter(newPost => newPost.id !== id);
+    setPosts(newPostsArray);
+    await API.graphql({ query: deleteNewPostMutation, variables: { input: { id } }});
   }
 
   return (
     <div className="App">
-      <h1>My Notes App</h1>
+      <h1>Post An Ad</h1>
       <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
-        value={formData.name}
+        onChange={e => setFormData({ ...formData, 'title': e.target.value})}
+        placeholder="Title"
+        value={formData.title}
       />
       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
+        placeholder="Post description"
         value={formData.description}
+        required="false"
       />
-      <button onClick={createNote}>Create Note</button>
+      <button onClick={createPost}>Create Post</button>
       <div style={{marginBottom: 30}}>
         {
-          notes.map(note => (
-            <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
+          posts.map(post => (
+            <div key={post.id || post.title}>
+              <h2>{post.title}</h2>
+              <p>{post.description}</p>
+              <button onClick={() => deletePost(post)}>Delete Post</button>
             </div>
           ))
         }

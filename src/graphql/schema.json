@@ -15,7 +15,7 @@
         "name" : "Query",
         "description" : null,
         "fields" : [ {
-          "name" : "getGraphCraig",
+          "name" : "getNewPost",
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -33,20 +33,20 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GraphCraig",
+            "name" : "NewPost",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "listGraphCraigs",
+          "name" : "listNewPosts",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGraphCraigFilterInput",
+              "name" : "ModelNewPostFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -71,7 +71,7 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelGraphCraigConnection",
+            "name" : "ModelNewPostConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -83,7 +83,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "GraphCraig",
+        "name" : "NewPost",
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -116,21 +116,6 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "location",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
           "name" : "price",
           "description" : null,
           "args" : [ ],
@@ -140,6 +125,21 @@
             "ofType" : {
               "kind" : "SCALAR",
               "name" : "Int",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "location",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
               "ofType" : null
             }
           },
@@ -172,7 +172,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "ENUM",
-                "name" : "Category",
+                "name" : "Categories",
                 "ofType" : null
               }
             }
@@ -180,7 +180,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "description",
+          "name" : "image",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -191,7 +191,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "imgUrl",
+          "name" : "description",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -265,7 +265,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "ENUM",
-        "name" : "Category",
+        "name" : "Categories",
         "description" : null,
         "fields" : null,
         "inputFields" : null,
@@ -276,22 +276,22 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "ELECTRONICS",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "FURNITURE",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
           "name" : "VEHICLES",
           "description" : null,
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "JEWELLERY",
+          "name" : "ELECTRONICS",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "OUTDOORS",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "FURNITURE",
           "description" : null,
           "isDeprecated" : false,
           "deprecationReason" : null
@@ -308,7 +308,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "ModelGraphCraigConnection",
+        "name" : "ModelNewPostConnection",
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -319,7 +319,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "OBJECT",
-              "name" : "GraphCraig",
+              "name" : "NewPost",
               "ofType" : null
             }
           },
@@ -343,7 +343,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelGraphCraigFilterInput",
+        "name" : "ModelNewPostFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -365,20 +365,20 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "location",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
           "name" : "price",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
             "name" : "ModelIntInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "location",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -396,12 +396,12 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelCategoryListInput",
+            "name" : "ModelCategoriesListInput",
             "ofType" : null
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "image",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -410,7 +410,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "imgUrl",
+          "name" : "description",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -426,7 +426,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGraphCraigFilterInput",
+              "name" : "ModelNewPostFilterInput",
               "ofType" : null
             }
           },
@@ -439,7 +439,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGraphCraigFilterInput",
+              "name" : "ModelNewPostFilterInput",
               "ofType" : null
             }
           },
@@ -449,7 +449,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelGraphCraigFilterInput",
+            "name" : "ModelNewPostFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -957,7 +957,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelCategoryListInput",
+        "name" : "ModelCategoriesListInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -968,7 +968,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "ENUM",
-              "name" : "Category",
+              "name" : "Categories",
               "ofType" : null
             }
           },
@@ -981,7 +981,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "ENUM",
-              "name" : "Category",
+              "name" : "Categories",
               "ofType" : null
             }
           },
@@ -991,7 +991,7 @@
           "description" : null,
           "type" : {
             "kind" : "ENUM",
-            "name" : "Category",
+            "name" : "Categories",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1000,7 +1000,7 @@
           "description" : null,
           "type" : {
             "kind" : "ENUM",
-            "name" : "Category",
+            "name" : "Categories",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1013,7 +1013,7 @@
         "name" : "Mutation",
         "description" : null,
         "fields" : [ {
-          "name" : "createGraphCraig",
+          "name" : "createNewPost",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1023,7 +1023,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "CreateGraphCraigInput",
+                "name" : "CreateNewPostInput",
                 "ofType" : null
               }
             },
@@ -1033,20 +1033,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGraphCraigConditionInput",
+              "name" : "ModelNewPostConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GraphCraig",
+            "name" : "NewPost",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "updateGraphCraig",
+          "name" : "updateNewPost",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1056,7 +1056,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "UpdateGraphCraigInput",
+                "name" : "UpdateNewPostInput",
                 "ofType" : null
               }
             },
@@ -1066,20 +1066,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGraphCraigConditionInput",
+              "name" : "ModelNewPostConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GraphCraig",
+            "name" : "NewPost",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "deleteGraphCraig",
+          "name" : "deleteNewPost",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1089,7 +1089,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "DeleteGraphCraigInput",
+                "name" : "DeleteNewPostInput",
                 "ofType" : null
               }
             },
@@ -1099,14 +1099,14 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGraphCraigConditionInput",
+              "name" : "ModelNewPostConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GraphCraig",
+            "name" : "NewPost",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -1118,7 +1118,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "CreateGraphCraigInput",
+        "name" : "CreateNewPostInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1132,19 +1132,6 @@
           "defaultValue" : null
         }, {
           "name" : "title",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "location",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -1170,6 +1157,19 @@
           },
           "defaultValue" : null
         }, {
+          "name" : "location",
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
           "name" : "seller",
           "description" : null,
           "type" : {
@@ -1193,14 +1193,14 @@
               "name" : null,
               "ofType" : {
                 "kind" : "ENUM",
-                "name" : "Category",
+                "name" : "Categories",
                 "ofType" : null
               }
             }
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "image",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -1209,7 +1209,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "imgUrl",
+          "name" : "description",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -1223,20 +1223,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelGraphCraigConditionInput",
+        "name" : "ModelNewPostConditionInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
           "name" : "title",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "location",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1254,6 +1245,15 @@
           },
           "defaultValue" : null
         }, {
+          "name" : "location",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
           "name" : "seller",
           "description" : null,
           "type" : {
@@ -1267,12 +1267,12 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelCategoryListInput",
+            "name" : "ModelCategoriesListInput",
             "ofType" : null
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "image",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1281,7 +1281,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "imgUrl",
+          "name" : "description",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1297,7 +1297,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGraphCraigConditionInput",
+              "name" : "ModelNewPostConditionInput",
               "ofType" : null
             }
           },
@@ -1310,7 +1310,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGraphCraigConditionInput",
+              "name" : "ModelNewPostConditionInput",
               "ofType" : null
             }
           },
@@ -1320,7 +1320,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelGraphCraigConditionInput",
+            "name" : "ModelNewPostConditionInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1330,7 +1330,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "UpdateGraphCraigInput",
+        "name" : "UpdateNewPostInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1356,20 +1356,20 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "location",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
           "name" : "price",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
             "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "location",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1393,14 +1393,14 @@
               "name" : null,
               "ofType" : {
                 "kind" : "ENUM",
-                "name" : "Category",
+                "name" : "Categories",
                 "ofType" : null
               }
             }
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "image",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -1409,7 +1409,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "imgUrl",
+          "name" : "description",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -1423,7 +1423,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "DeleteGraphCraigInput",
+        "name" : "DeleteNewPostInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1444,34 +1444,34 @@
         "name" : "Subscription",
         "description" : null,
         "fields" : [ {
-          "name" : "onCreateGraphCraig",
+          "name" : "onCreateNewPost",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GraphCraig",
+            "name" : "NewPost",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onUpdateGraphCraig",
+          "name" : "onUpdateNewPost",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GraphCraig",
+            "name" : "NewPost",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onDeleteGraphCraig",
+          "name" : "onDeleteNewPost",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GraphCraig",
+            "name" : "NewPost",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -1499,51 +1499,6 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         } ],
-        "possibleTypes" : null
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ModelBooleanInput",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "ne",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "eq",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeExists",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeType",
-          "description" : null,
-          "type" : {
-            "kind" : "ENUM",
-            "name" : "ModelAttributeTypes",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
-        "enumValues" : null,
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
@@ -1645,6 +1600,51 @@
         "description" : "Built-in Float",
         "fields" : null,
         "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelBooleanInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeExists",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeType",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "ModelAttributeTypes",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
         "interfaces" : null,
         "enumValues" : null,
         "possibleTypes" : null
@@ -2490,6 +2490,23 @@
         "onFragment" : false,
         "onField" : false
       }, {
+        "name" : "deprecated",
+        "description" : null,
+        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
+        "args" : [ {
+          "name" : "reason",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : "\"No longer supported\""
+        } ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
         "name" : "aws_publish",
         "description" : "Tells the service which subscriptions will be published to when this mutation is called. This directive is deprecated use @aws_susbscribe directive instead.",
         "locations" : [ "FIELD_DEFINITION" ],
@@ -2515,23 +2532,6 @@
         "description" : "Tells the service this field/object has access authorized by a Lambda Authorizer.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
         "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "deprecated",
-        "description" : null,
-        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
-        "args" : [ {
-          "name" : "reason",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : "\"No longer supported\""
-        } ],
         "onOperation" : false,
         "onFragment" : false,
         "onField" : false

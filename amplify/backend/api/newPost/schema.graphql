@@ -1,0 +1,18 @@
+type NewPost @model {
+  id: ID!
+  title: String!
+  price: Int!
+  location: String!
+  seller: String!
+  category: [Categories!]
+  image: String
+  description: String
+}
+
+enum Categories {
+  SPORTS
+  VEHICLES
+  ELECTRONICS
+  OUTDOORS
+  FURNITURE
+}

@@ -1,58 +1,58 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createGraphCraig = /* GraphQL */ `
-  mutation CreateGraphCraig(
-    $input: CreateGraphCraigInput!
-    $condition: ModelGraphCraigConditionInput
+export const createNewPost = /* GraphQL */ `
+  mutation CreateNewPost(
+    $input: CreateNewPostInput!
+    $condition: ModelNewPostConditionInput
   ) {
-    createGraphCraig(input: $input, condition: $condition) {
+    createNewPost(input: $input, condition: $condition) {
       id
       title
-      location
       price
+      location
       seller
       category
+      image
       description
-      imgUrl
       createdAt
       updatedAt
     }
   }
 `;
-export const updateGraphCraig = /* GraphQL */ `
-  mutation UpdateGraphCraig(
-    $input: UpdateGraphCraigInput!
-    $condition: ModelGraphCraigConditionInput
+export const updateNewPost = /* GraphQL */ `
+  mutation UpdateNewPost(
+    $input: UpdateNewPostInput!
+    $condition: ModelNewPostConditionInput
   ) {
-    updateGraphCraig(input: $input, condition: $condition) {
+    updateNewPost(input: $input, condition: $condition) {
       id
       title
-      location
       price
+      location
       seller
       category
+      image
       description
-      imgUrl
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteGraphCraig = /* GraphQL */ `
-  mutation DeleteGraphCraig(
-    $input: DeleteGraphCraigInput!
-    $condition: ModelGraphCraigConditionInput
+export const deleteNewPost = /* GraphQL */ `
+  mutation DeleteNewPost(
+    $input: DeleteNewPostInput!
+    $condition: ModelNewPostConditionInput
   ) {
-    deleteGraphCraig(input: $input, condition: $condition) {
+    deleteNewPost(input: $input, condition: $condition) {
       id
       title
-      location
       price
+      location
       seller
       category
+      image
       description
-      imgUrl
       createdAt
       updatedAt
     }

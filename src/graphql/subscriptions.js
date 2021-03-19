@@ -1,49 +1,49 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateGraphCraig = /* GraphQL */ `
-  subscription OnCreateGraphCraig {
-    onCreateGraphCraig {
+export const onCreateNewPost = /* GraphQL */ `
+  subscription OnCreateNewPost {
+    onCreateNewPost {
       id
       title
-      location
       price
+      location
       seller
       category
+      image
       description
-      imgUrl
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateGraphCraig = /* GraphQL */ `
-  subscription OnUpdateGraphCraig {
-    onUpdateGraphCraig {
+export const onUpdateNewPost = /* GraphQL */ `
+  subscription OnUpdateNewPost {
+    onUpdateNewPost {
       id
       title
-      location
       price
+      location
       seller
       category
+      image
       description
-      imgUrl
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteGraphCraig = /* GraphQL */ `
-  subscription OnDeleteGraphCraig {
-    onDeleteGraphCraig {
+export const onDeleteNewPost = /* GraphQL */ `
+  subscription OnDeleteNewPost {
+    onDeleteNewPost {
       id
       title
-      location
       price
+      location
       seller
       category
+      image
       description
-      imgUrl
       createdAt
       updatedAt
     }
