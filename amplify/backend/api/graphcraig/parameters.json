@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "graphcraig",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authgraphcraig838080dc",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

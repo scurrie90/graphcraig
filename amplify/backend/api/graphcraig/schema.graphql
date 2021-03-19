@@ -1,0 +1,18 @@
+type GraphCraig @model {
+  id: ID!
+  title: String!
+  location: String!
+  price: Int!
+  seller: String!
+  category: [Category!]
+  description: String
+  imgUrl: String
+}
+
+enum Category {
+  SPORTS
+  ELECTRONICS
+  FURNITURE
+  VEHICLES
+  JEWELLERY
+}
