@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { API } from 'aws-amplify';
+import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNewPosts } from './graphql/queries';
 import { createNewPost as createNewPostMutation, deleteNewPost as deleteNewPostMutation} from './graphql/mutations';
@@ -17,12 +17,24 @@ function App() {
 
   async function fetchPosts() {
     const apiData = await API.graphql({ query: listNewPosts });
+    const postsFromAPI = apiData.data.listNewPosts.items;
+    await Promise.all(postsFromAPI.map(async post => {
+      if (post.image) {
+        const image = await Storage.get(post.image);
+        post.image = image;
+      }
+      return post;
+    }))
     setPosts(apiData.data.listNewPosts.items);
   }
 
   async function createPost() {
     if (!formData.title || !formData.description) return;
     await API.graphql({ query: createNewPostMutation, variables: { input: formData } });
+    if (formData.image) {
+      const image = await Storage.get(formData.image);
+      formData.image = image;
+    }
     setPosts([ ...posts, formData ]);
     setFormData(initialFormState);
   }
@@ -31,6 +43,14 @@ function App() {
     const newPostsArray = posts.filter(newPost => newPost.id !== id);
     setPosts(newPostsArray);
     await API.graphql({ query: deleteNewPostMutation, variables: { input: { id } }});
+  }
+  
+  async function onChange(e) {
+    if (!e.target.files[0]) return
+    const file = e.target.files[0];
+    setFormData({ ...formData, image: file.title });
+    await Storage.put(file.title, file);
+    fetchPosts();
   }
 
   return (
@@ -45,7 +65,10 @@ function App() {
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
         placeholder="Post description"
         value={formData.description}
-        required="false"
+      />
+      <input
+        type="file"
+        onChange={onChange}
       />
       <button onClick={createPost}>Create Post</button>
       <div style={{marginBottom: 30}}>
@@ -54,6 +77,9 @@ function App() {
             <div key={post.id || post.title}>
               <h2>{post.title}</h2>
               <p>{post.description}</p>
+              {
+                 post.image && <img src={post.image} alt="alt" style={{width: 400}} />
+              }
               <button onClick={() => deletePost(post)}>Delete Post</button>
             </div>
           ))

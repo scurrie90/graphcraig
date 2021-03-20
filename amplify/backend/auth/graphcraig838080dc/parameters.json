@@ -1,6 +1,6 @@
 {
     "identityPoolName": "graphcraig838080dc_identitypool_838080dc",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "graphc838080dc",
     "userPoolName": "graphcraig838080dc_userpool_838080dc",
     "autoVerifiedAttributes": [
